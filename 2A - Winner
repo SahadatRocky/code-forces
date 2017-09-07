@@ -1,0 +1,61 @@
+#include<iostream>
+#include<vector>
+#include<map>
+#include<set>
+#include<string>
+
+using namespace std;
+int main(){
+     
+  int n;
+  cin>>n;
+  
+vector<pair<string,int>> round(n);
+map<string,int> score;
+   
+   for(int i=0;i<n;i++){
+  cin>>round[i].first>>round[i].second;
+  score[round[i].first] +=round[i].second;
+   	}
+   set<string> winner;
+   
+   int m=-1000000; 
+   map<string,int>::iterator itr;
+   //vector<pair<string,int>>::iterator itr;
+for(itr=score.begin();itr!=score.end();itr++){
+	
+	if(itr->second>m){
+	   m=itr->second;
+	   winner.clear();
+	   winner.insert(itr->first);
+	   
+	   }
+	   else if(itr->second==m){
+	   	winner.insert(itr->first);
+	   	}
+	   
+	}
+  
+   if(winner.size()>1){
+   	
+   	score.clear();
+   	vector<pair<string,int>> ::iterator itr;
+   	
+for(itr=round.begin();itr!=round.end();itr++){
+   		
+   		score[itr->first]+=itr->second;
+   	if(score[itr->first]>=m  && winner.count(itr->first)==1){
+   			
+   			winner.clear();
+   			winner.insert(itr->first);
+   			break;
+   			   }
+   		
+   	  	}
+   	
+   	}
+   	
+   	
+   cout<<*winner.begin()<<endl;
+return 0;
+}
