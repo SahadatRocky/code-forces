@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int remove(int n){
+	
+	int m=0,d,p=1;
+	while(n!=0){
+		   d=n%10;
+		   n=n/10;
+		   
+		   if(d!=0){
+		   	  m=m+d*p;
+		   	  p=p*10;
+		   	  
+		   	  
+		   	}
+		   
+		}
+	     
+	   return m;
+	}
+
+ int main(){    
+         
+         int a,b;
+         cin>>a;
+         cin>>b;
+         int c;
+         int A,B,C;
+         c=a+b;
+         
+         A=remove(a);
+         B=remove(b);
+         C=remove(c);
+         
+         cout<<( C==A+B ? "YES" : "NO" )<<endl;
+    return 0;
+
+}
+
