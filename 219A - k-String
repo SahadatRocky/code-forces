@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+     
+ int main(){    
+ 	
+ 	
+ 	int k,c=0;
+ 	cin>>k;
+ 	string s;
+ 	char ch;
+ 	cin>>s;
+ 	transform(s.begin(), s.end(), s.begin(), ::tolower);
+
+  //  cout << s<< endl;
+   
+   sort(s.begin(), s.end());
+    
+    for(int i=0;i<s.size(); i++){
+    	if(i% k == 0){
+    	ch=s[i];
+    	  // cout<<ch<<endl;
+    	     }
+    	     if(s[i]==ch){
+    	     	c++;
+    	     	//cout<<c<<endl;
+    	     	}
+    	     	
+    	}
+    	
+    	if(s.size()==c && c%k==0){
+    		   for(int i=0; i<k; i++){
+    		    	for(int j=0; j<s.size(); j+=k){
+    		    		  cout<<s[j];
+    		    		}
+    		    	
+    		    	}
+    		    	  cout<<endl;
+    		    
+    		}
+    		else{
+    			cout<<"-1"<<endl;
+    			}
+    		
+    	
+   // cout<<c<<endl;
+    
+   // cout<<s<<endl;
+ 	
+ 	     
+         
+         
+    return 0;
+
+}
+
