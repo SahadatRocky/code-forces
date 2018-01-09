@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+   int n;
+   int p,v,t;
+   int cnt=0;
+   cin>>n;
+   while(n--){
+   	  cin>>p>>v>>t;
+   	  if(p==1 && v==1 && t==1){
+   	  	  cnt++;
+   	  	}
+   	  	else{
+   	  	if((p==1 && v==1 && t==0) || (p==1 && v==0 && t==1) || (p==0 && v==1 && t==1)){
+   	  		cnt++;
+   	  		}
+   	  		else{
+   	  			continue;
+   	  			} 		
+   	     }
+   	  
+   	}
+   cout<<cnt<<endl;
+    return 0;
+}
