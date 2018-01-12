@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+     string s;
+     vector<char>v;
+     cin>>s;
+     int len,i,pls;
+     len=s.size();
+     pls=len/2;
+     for( i=0; i<len; i=i+2){
+     	 //  cout<<s[i];
+     	   v.push_back(s[i]);
+     	
+     	}
+
+      sort(v.begin(),v.end());
+     	
+     	int x=0;
+     vector<char>:: iterator itr;
+     for(itr=v.begin(); itr!=v.end(); itr++){
+     	 cout<<*itr;
+     	 if(x<pls){
+     	 	   cout<<"+";
+     	 	}
+     	x++;
+     	}
+     	cout<<endl;
+     
+  
+    return 0;
+}
