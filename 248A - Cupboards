@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+     int n;
+     cin>>n;
+     vector<pair<int,int>> v;
+     int i=1;
+     while(i<=n){
+     	int left,right;
+     	cin>>left>>right;
+     	v.push_back(make_pair(left,right)); 
+         i++;
+     	}
+     vector<pair<int,int>>:: iterator itr;
+     int cnt=0;
+     int fv=0,lv=0;
+     for(itr=v.begin();itr!=v.end();itr++){
+     
+    fv+=itr->first;
+    lv+=itr->second;
+     
+    
+   
+     	   }
+     	   	
+     	//cout<<itr->first<<" "<<itr->second<<endl;
+   // cout<<fv<<" "<<lv<<" "<<n<<endl;
+  cout<<min(fv,n-fv)+min(lv,n-lv)<<endl;
+     	
+    return 0;
+}
